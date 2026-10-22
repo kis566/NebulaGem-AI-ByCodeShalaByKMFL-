@@ -1,0 +1,25 @@
+@media (max-width: 900px) {
+  .code-layout { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-close { display: flex; }
+  .menu-btn { display: flex; }
+  .suggestions { grid-template-columns: 1fr; }
+  .welcome h1 { font-size: 1.3rem; }
+  .message { padding: 14px 16px; }
+  .input-area { padding: 0 12px 14px; }
+  .input-box { padding-left: 16px; }
+  .msg-content pre { font-size: 0.75rem; padding: 12px; }
+  .section-title .s-name { font-size: 0.88rem; }
+  .voice-options { grid-template-columns: 1fr; }
+  .dash-hero h1 { font-size: 1.5rem; }
+  .dashboard { padding: 24px 16px 40px; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
