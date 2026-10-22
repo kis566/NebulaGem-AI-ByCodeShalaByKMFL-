@@ -1,0 +1,131 @@
+.code-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  min-height: 0;
+  overflow: hidden;
+}
+.code-pane {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+.pane-header {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-shrink: 0;
+  background: var(--bg);
+}
+.pane-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lang-select {
+  padding: 4px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.lang-select:focus { border-color: var(--tool-color, var(--accent)); }
+.pane-body { flex: 1; overflow-y: auto; padding: 18px; min-height: 0; }
+.code-prompt-input {
+  width: 100%;
+  min-height: 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: all 0.2s;
+}
+.code-prompt-input:focus { border-color: var(--tool-color, var(--accent)); }
+.code-output {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 300px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #e4e4e7;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+.code-output:empty::before {
+  content: '// Yahan code aayega...';
+  color: var(--text-4);
+  font-style: italic;
+}
+.code-note {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.code-note h3 { font-size: 0.95rem; margin-bottom: 8px; color: var(--text); }
+.code-note p { margin-bottom: 8px; }
+.code-note ul { padding-left: 20px; margin: 8px 0; }
+.code-note li { margin-bottom: 4px; }
+.code-note pre {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
+.generate-btn {
+  width: 100%;
+  padding: 13px 22px;
+  background: var(--tool-color, var(--accent));
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px -4px var(--tool-color, var(--accent));
+}
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px -4px var(--tool-color, var(--accent));
+}
+.generate-btn:disabled { opacity: 0.5; cursor: not-allowed; }

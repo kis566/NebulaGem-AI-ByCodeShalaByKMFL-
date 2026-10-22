@@ -1,0 +1,114 @@
+.dashboard { flex: 1; overflow-y: auto; padding: 40px 32px 60px; }
+.dash-hero { text-align: center; max-width: 800px; margin: 0 auto 40px; }
+.dash-hero .dash-logo {
+  width: 68px; height: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #10a37f, #0e8f6f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 24px;
+  box-shadow: 0 12px 40px rgba(16,163,127,0.35);
+}
+.dash-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #fff, #b4b4b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.dash-hero p {
+  font-size: 0.95rem;
+  color: var(--text-3);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.dash-hero .highlight { color: var(--accent); font-weight: 600; }
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tool-card {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  font-family: inherit;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  animation: cardIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-color, var(--accent));
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.tool-card:hover {
+  background: var(--surface-2);
+  border-color: var(--card-color, var(--accent));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -8px rgba(0,0,0,0.5),
+              0 0 30px -10px var(--card-color, var(--accent));
+}
+.tool-card:hover::before { opacity: 1; }
+.tc-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tc-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: var(--card-color);
+  box-shadow: 0 6px 20px -4px var(--card-color);
+  color: #fff;
+}
+.tc-limit {
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.tc-body { flex: 1; }
+.tc-title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.2px; }
+.tc-desc { font-size: 0.78rem; color: var(--text-3); line-height: 1.5; }
+.tc-foot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--card-color, var(--accent));
+  margin-top: 4px;
+  transition: gap 0.2s;
+}
+.tool-card:hover .tc-foot { gap: 10px; }
